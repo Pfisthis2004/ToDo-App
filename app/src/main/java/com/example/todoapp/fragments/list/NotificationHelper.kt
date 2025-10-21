@@ -14,45 +14,7 @@ import com.example.todoapp.MainActivity
 object NotificationHelper {
     private const val CHANNEL_ID = "todo_channel"
 
-//    fun showNotification(context: Context, title: String, message: String) {
-//        createNotificationChannel(context)
 //
-//        // ✅ Intent mở app khi người dùng bấm vào thông báo
-//        val intent = Intent(context, MainActivity::class.java).apply {
-//            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-//        }
-//
-//        val pendingIntent = PendingIntent.getActivity(
-//            context,
-//            0,
-//            intent,
-//            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
-//        )
-//
-//
-//        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-//            .setSmallIcon(R.drawable.ic_launcher_foreground)
-//            .setContentTitle(title)
-//            .setContentText(message)
-//            .setPriority(NotificationCompat.PRIORITY_HIGH)
-//            .setAutoCancel(true)
-//            .setContentIntent(pendingIntent)
-//            .build()
-//
-//        val notificationManager = NotificationManagerCompat.from(context)
-//
-//        // ✅ Kiểm tra quyền trước khi notify
-//        if (androidx.core.content.ContextCompat.checkSelfPermission(
-//                context,
-//                android.Manifest.permission.POST_NOTIFICATIONS
-//            ) == android.content.pm.PackageManager.PERMISSION_GRANTED
-//        ) {
-//            notificationManager.notify(System.currentTimeMillis().toInt(), notification)
-//        } else {
-//            // ❗ Nếu chưa có quyền, bạn có thể log hoặc bỏ qua
-//            android.util.Log.w("NotificationHelper", "Permission POST_NOTIFICATIONS not granted.")
-//        }
-//    }
     fun createNotificationChannel(context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
@@ -60,7 +22,7 @@ object NotificationHelper {
                 "ToDo Reminders",
                 NotificationManager.IMPORTANCE_DEFAULT
             ).apply {
-                description = "Reminders for ToDo tasks"
+                description = "Thông báo nhắc nhở công việc"
             }
 
             val manager = context.getSystemService(NotificationManager::class.java)

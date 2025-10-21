@@ -122,21 +122,4 @@ class MainActivity : AppCompatActivity() {
         return findNavController(R.id.nav_host_fragment).navigateUp()
                 || super.onSupportNavigateUp()
     }
-    private fun applyThemeToViews(isDark: Boolean) {
-        val bgColor = if (isDark) Color.parseColor("#303030") else Color.WHITE
-        val textColor = if (isDark) Color.WHITE else Color.BLACK
-
-        // Màu nền chính
-        window.decorView.setBackgroundColor(bgColor)
-        binding.root.setBackgroundColor(bgColor)
-
-        // Màu thanh action bar (nếu có)
-        supportActionBar?.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(bgColor))
-        supportActionBar?.title = if (isDark) "🌙 Chế độ tối" else "☀️ Chế độ sáng"
-
-        // Nếu fragment có RecyclerView hoặc TextView — gửi broadcast để fragment tự đổi màu
-        val intent = android.content.Intent("THEME_CHANGED")
-        intent.putExtra("isDark", isDark)
-        sendBroadcast(intent)
-    }
 }

@@ -12,7 +12,7 @@ import com.example.todoapp.R
 import com.example.todoapp.data.models.ToDoData
 import com.example.todoapp.data.viewmodel.ToDoViewModel
 import com.example.todoapp.databinding.FragmentUpdateBinding
-import com.example.todoapp.fragments.SharedViewModel
+import com.example.todoapp.data.viewmodel.SharedViewModel
 import com.example.todoapp.fragments.list.NotificationHelper
 
 class UpdateFragment : Fragment() {

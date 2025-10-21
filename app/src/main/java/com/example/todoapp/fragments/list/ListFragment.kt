@@ -18,7 +18,7 @@ import com.example.todoapp.R
 import com.example.todoapp.data.models.ToDoData
 import com.example.todoapp.data.viewmodel.ToDoViewModel
 import com.example.todoapp.databinding.FragmentListBinding
-import com.example.todoapp.fragments.SharedViewModel
+import com.example.todoapp.data.viewmodel.SharedViewModel
 import com.example.todoapp.fragments.list.adapter.ListAdapter
 import com.example.todoapp.utils.hideKeyboard
 import com.example.todoapp.utils.observeOnce
@@ -82,10 +82,10 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
     private fun restoreDeletedItem(view: View, deletedItem: ToDoData) {
         Snackbar.make(
             view,
-            "Deleted '${deletedItem.title}'",
+            "Đã xóa '${deletedItem.title}'",
             Snackbar.LENGTH_LONG
         ).apply {
-            setAction("Undo") {
+            setAction("Hủy") {
                 mToDoViewModel.insertData(deletedItem)
             }
             show()
@@ -129,13 +129,13 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
                 mToDoViewModel.deleteAll()
                 Toast.makeText(
                         requireContext(),
-                        "Successfully Removed everything! ",
+                        "Hoàn tất việc xóa – không còn gì sót lại! ",
                         Toast.LENGTH_SHORT
                 ).show()
             }
             setNegativeButton("NO") { _, _ -> /*DO NOTHING*/ }
-            setTitle("Delete Everything?")
-            setMessage("Are you sure you want to remove: Everything?")
+            setTitle("Xác nhận xóa")
+            setMessage("Xóa toàn bộ dữ liệu? Hành động này không thể hoàn tác.")
             create()
         }
         alertDialog.show()

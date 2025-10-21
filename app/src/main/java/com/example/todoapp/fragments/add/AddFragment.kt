@@ -11,7 +11,7 @@ import com.example.todoapp.R
 import com.example.todoapp.data.models.ToDoData
 import com.example.todoapp.data.viewmodel.ToDoViewModel
 import com.example.todoapp.databinding.FragmentAddBinding
-import com.example.todoapp.fragments.SharedViewModel
+import com.example.todoapp.data.viewmodel.SharedViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -102,10 +102,10 @@ class AddFragment : Fragment() {
                 endDate = mEndDate
             )
             mToDoViewModel.insertData(newData)
-            Toast.makeText(requireContext(), "Successfully Added!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Công việc đã được thêm!", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
         } else {
-            Toast.makeText(requireContext(), "Please fill out all the fields.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Vui lòng điền đầy đủ thông tin.", Toast.LENGTH_SHORT).show()
         }
     }
 }
