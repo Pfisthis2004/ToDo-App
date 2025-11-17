@@ -21,12 +21,17 @@ Tính năng nổi bật:
 + Lưu trữ dữ liệu offline bằng Room Database
 
 Công nghệ sử dụng
-  + Thành phần	Mô tả
-  + Ngôn ngữ	Kotlin
-  + Kiến trúc	MVVM + Repository Pattern
-  + Database	Room
-  + UI RecyclerView, LiveData, ViewBinding
-  + Thư viện AndroidX	Navigation, Lifecycle, Material Components
-  + Thông báo & tác vụ nền	WorkManager, NotificationCompat
+
+  + Ngôn ngữ:	Kotlin
+    
+  + Kiến trúc:	MVVM + Repository Pattern
+    
+  + Database:	Room
+    
+  + UI: RecyclerView, LiveData, ViewBinding
+    
+  + Thư viện: AndroidX	Navigation, Lifecycle, Material Components
+    
+  + Thông báo & tác vụ nền:	WorkManager, NotificationCompat
 
 
